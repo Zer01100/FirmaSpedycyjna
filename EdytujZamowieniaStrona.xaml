@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.EdytujZamowieniaStrona"
+             Title="EdytujZamowieniaStrona">
+    <StackLayout Padding="10">
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="IdEntry" IsReadOnly="True" Grid.Column="0" Grid.Row="2"/>
+
+            <Label Text="Data Zamówienia" Grid.Column="0" Grid.Row="4"/>
+            <Entry x:Name="DataEntry" Grid.Column="0" Grid.Row="5"/>
+
+            <Label Text="Adres Początkowy" Grid.Column="0" Grid.Row="7"/>
+            <Entry x:Name="AdresPEntry" Grid.Column="0" Grid.Row="8"/>
+
+            <Label Text="Adres Docelowy" Grid.Column="2" Grid.Row="7"/>
+            <Entry x:Name="AdresDEntry" Grid.Column="2" Grid.Row="8"/>
+
+            <Label Text="Towar" Grid.Column="0" Grid.Row="10"/>
+            <Entry x:Name="TowarEntry" Grid.Column="0" Grid.Row="11"/>
+
+            <Label Text="Masa" Grid.Column="0" Grid.Row="13"/>
+            <Entry x:Name="MasaEntry" Grid.Column="0" Grid.Row="14"/>
+
+            <Label Text="Długość" Grid.Column="2" Grid.Row="13"/>
+            <Entry x:Name="DlugoscEntry" Grid.Column="2" Grid.Row="14"/>
+
+            <Label Text="Szerokość" Grid.Column="0" Grid.Row="16"/>
+            <Entry x:Name="SzerokoscEntry" Grid.Column="0" Grid.Row="17"/>
+
+            <Label Text="Wysokość" Grid.Column="2" Grid.Row="16"/>
+            <Entry x:Name="WysokoscEntry" Grid.Column="2" Grid.Row="17"/>
+
+            <Label Text="Status" Grid.Column="0" Grid.Row="19"/>
+            <Picker x:Name="StatusPicker" Grid.Column="0" Grid.Row="20">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Złożone</x:String>
+                        <x:String>W realizacji</x:String>
+                        <x:String>Zakończone</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Zamawiający" Grid.Column="2" Grid.Row="19"/>
+            <Picker x:Name ="KlientPicker" Grid.Column="2" Grid.Row="20"
+                ItemsSource="{Binding Klienci}" ItemDisplayBinding="{Binding Nazwa}" SelectedItem="{Binding WybranyKlient}"
+            />
+            
+            <Button Text="Save" WidthRequest="200" Grid.Column="0" Grid.Row="22" Clicked="OnSaveClicked"/>
+            <Button Text="Cancel" WidthRequest="200" Grid.Column="2" Grid.Row="22" Clicked="OnCancelClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

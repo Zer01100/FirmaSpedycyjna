@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.EdytujPojazdyStrona"
+             Title="EdytujPojazdyStrona">
+    <StackLayout Padding="10">
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="IdEntry" IsReadOnly="True" Grid.Column="0" Grid.Row="2"/>
+
+            <Label Text="NumerRejestracyjny" Grid.Column="2" Grid.Row="1"/>
+            <Entry x:Name="NumerRejestracyjnyEntry" Grid.Column="2" Grid.Row="2"/>
+
+            <Label Text="Wymagane Uprawnienia" Grid.Column="0" Grid.Row="4"/>
+            <Picker x:Name="KategoriaPicker" Grid.Column="0" Grid.Row="5">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>C</x:String>
+                        <x:String>C+E</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Typ Pojazdu" Grid.Column="2" Grid.Row="4"/>
+            <Picker x:Name="TypPicker" Grid.Column="2" Grid.Row="5">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Samochód dostawczy</x:String>
+                        <x:String>Ciągnik siodłowy</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Maksymalna Masa" Grid.Column="0" Grid.Row="7"/>
+            <Entry x:Name="MaxMasaEntry" Grid.Column="0" Grid.Row="8"/>
+
+            <Label Text="Maksymalna Długość" Grid.Column="2" Grid.Row="7"/>
+            <Entry x:Name="MaxDlugoscEntry" Grid.Column="2" Grid.Row="8"/>
+
+            <Label Text="Maksymalna Szerokość" Grid.Column="0" Grid.Row="10"/>
+            <Entry x:Name="MaxSzerokoscEntry" Grid.Column="0" Grid.Row="11"/>
+
+            <Label Text="Maksymalna Wysokość" Grid.Column="2" Grid.Row="10"/>
+            <Entry x:Name="MaxWysokoscEntry" Grid.Column="2" Grid.Row="11"/>
+
+            <Button Text="Save" WidthRequest="200" Grid.Column="0" Grid.Row="13" Clicked="OnSaveClicked"/>
+            <Button Text="Cancel" WidthRequest="200" Grid.Column="2" Grid.Row="13" Clicked="OnCancelClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.MainPage"
+             BackgroundColor="#262828">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PageChangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#383b3b" />
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+            
+        <Button Text="Klienci" Grid.Column="0" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+        <Button Text="Zamówienia" Grid.Column="1" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+        <Button Text="Kierowcy" Grid.Column="2" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+        <Button Text="Przejazdy" Grid.Column="3" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+        <Button Text="Pojazdy" Grid.Column="4" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+        <Button Text="Naczepy" Grid.Column="5" Style="{StaticResource PageChangeButton}">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+                    PointerEntered="OnPointerEntered"
+                    PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+    </Grid>
+
+</ContentPage>
+
+

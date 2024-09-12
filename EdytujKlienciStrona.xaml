@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.EdytujKlienciStrona"
+             Title="EdytujKlienciStrona">
+    <StackLayout Padding="10">
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="IdEntry" IsReadOnly="True" Grid.Column="0" Grid.Row="2"/>
+
+            <Label Text="Nazwa" Grid.Column="0" Grid.Row="4"/>
+            <Entry x:Name="NazwaEntry" Grid.Column="0" Grid.Row="5"/>
+
+            <Label Text="Adres" Grid.Column="0" Grid.Row="7"/>
+            <Entry x:Name="AdresEntry" Grid.Column="0" Grid.Row="8"/>
+
+            <Label Text="Numer Telefonu" Grid.Column="0" Grid.Row="10"/>
+            <Entry x:Name="NumerTelefonuEntry" Placeholder="+00 000 000 000" Grid.Column="0" Grid.Row="11"/>
+
+            <Label Text="Adres Email" Grid.Column="2" Grid.Row="10"/>
+            <Entry x:Name="AdresEmailEntry" Placeholder="adres@serwis.domena" Grid.Column="2" Grid.Row="11"/>
+
+            <Button Text="Save" WidthRequest="200" Grid.Column="0" Grid.Row="13" Clicked="OnSaveClicked"/>
+            <Button Text="Cancel" WidthRequest="200" Grid.Column="2" Grid.Row="13" Clicked="OnCancelClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

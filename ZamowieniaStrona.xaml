@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.ZamowieniaStrona"
+             BackgroundColor="#181919"
+             Title="Zamówienia">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PageChangeButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#383b3b" />
+                <Setter Property="TextColor" Value="#8e9494"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+
+            <Style x:Key="GridLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="#8e9494"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" BackgroundColor="#383b3b">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Button Text="Klienci" Grid.Column="0" Style="{StaticResource PageChangeButton}" Clicked="OnChangeToKlienciClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+            PointerEntered="OnPointerEntered"
+            PointerExited="OnPointerExited" />
+                </Button.GestureRecognizers>
+            </Button>
+            <Button Text="Zamówienia" Grid.Column="1" Style="{StaticResource PageChangeButton}"   BackgroundColor="#181919" Clicked="OnChangeToZamowieniaClicked">
+
+            </Button>
+            <Button Text="Kierowcy" Grid.Column="2" Style="{StaticResource PageChangeButton}" Clicked="OnChangeToKierowcyClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+            PointerEntered="OnPointerEntered"
+            PointerExited="OnPointerExited" />
+                </Button.GestureRecognizers>
+            </Button>
+            <Button Text="Przejazdy" Grid.Column="3" Style="{StaticResource PageChangeButton}" Clicked="OnChangeToPrzejazdyClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+PointerEntered="OnPointerEntered"
+PointerExited="OnPointerExited" />
+                </Button.GestureRecognizers>
+            </Button>
+            <Button Text="Pojazdy" Grid.Column="4" Style="{StaticResource PageChangeButton}" Clicked="OnChangeToPojazdyClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+PointerEntered="OnPointerEntered"
+PointerExited="OnPointerExited" />
+                </Button.GestureRecognizers>
+            </Button>
+            <Button Text="Naczepy" Grid.Column="5" Style="{StaticResource PageChangeButton}"   Clicked="OnChangeToNaczepyClicked">
+                <Button.GestureRecognizers>
+                    <PointerGestureRecognizer 
+            PointerEntered="OnPointerEntered"
+            PointerExited="OnPointerExited" />
+                </Button.GestureRecognizers>
+            </Button>
+        </Grid>
+
+        <Button Grid.Row="2" Text="Dodaj nowe zamówienie" WidthRequest="400" HeightRequest="50" HorizontalOptions="End" Margin="20" Style="{StaticResource PageChangeButton}" Clicked="OnDodajZamowienieClicked">
+            <Button.GestureRecognizers>
+                <PointerGestureRecognizer 
+PointerEntered="OnPointerEntered"
+PointerExited="OnPointerExited" />
+            </Button.GestureRecognizers>
+        </Button>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="ID" Grid.Column="0" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Data Zamówienia" Grid.Column="1" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Adres Początkowy" Grid.Column="2" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Adres Docelowy" Grid.Column="3" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Towar" Grid.Column="4" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Masa" Grid.Column="5" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Długość" Grid.Column="6" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Szerokość" Grid.Column="7" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Wysokość" Grid.Column="8" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Status" Grid.Column="9" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Zamawiający" Grid.Column="10" Style="{StaticResource GridLabel}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                    <PointerGestureRecognizer PointerEntered="OnLabelPointerEntered" PointerExited="OnLabelPointerExited"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        <CollectionView x:Name="NaczepyCollectionView" ItemsSource="{Binding ZamowieniaList}" ItemsLayout="VerticalList" Grid.Row="6">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer   Tapped="OnGridTapped" />
+                            <PointerGestureRecognizer 
+                                 PointerEntered="OnPointerGridEntered"
+                                 PointerExited="OnPointerGridExited" />
+                        </Grid.GestureRecognizers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Id}" Style="{StaticResource GridLabel}" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding DataZamowienia}" Style="{StaticResource GridLabel}" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding AdresPoczatkowy}" Style="{StaticResource GridLabel}" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding AdresDocelowy}" Style="{StaticResource GridLabel}" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Towar}" Style="{StaticResource GridLabel}" Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Masa}" Style="{StaticResource GridLabel}" Grid.Column="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Dlugosc}" Style="{StaticResource GridLabel}" Grid.Column="6" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Szerokosc}" Style="{StaticResource GridLabel}" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Wysokosc}" Style="{StaticResource GridLabel}" Grid.Column="8" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Status}" Style="{StaticResource GridLabel}" Grid.Column="9" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding NazwaKlienta}" Style="{StaticResource GridLabel}" Grid.Column="10" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

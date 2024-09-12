@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirmaSpedycyjna.EdytujPrzejazdyStrona"
+             Title="EdytujPrzejazdyStrona">
+    <StackLayout Padding="10">
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="ID" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="IdEntry" IsReadOnly="True" Grid.Column="0" Grid.Row="2"/>
+
+            <Label Text="Zamówienie" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3"/>
+            <Picker x:Name ="ZamowieniaPicker" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3"
+                ItemsSource="{Binding ZamowieniaList}" ItemDisplayBinding="{Binding String}" SelectedItem="{Binding WybraneZamowienie}"
+            />
+
+            <Label Text="Pojazd" Grid.Column="0" Grid.Row="7"/>
+            <Picker x:Name ="PojazdPicker" Grid.Column="0" Grid.Row="8"
+                ItemsSource="{Binding PojazdyList}" ItemDisplayBinding="{Binding String}" SelectedItem="{Binding WybranyPojazd}"
+            />
+
+            <Label Text="Naczepa" Grid.Column="2" Grid.Row="7"/>
+            <Picker x:Name ="NaczepaPicker" Grid.Column="2" Grid.Row="8"
+                ItemsSource="{Binding NaczepyList}" ItemDisplayBinding="{Binding String}" SelectedItem="{Binding WybranaNaczepa}"
+            />
+
+            <Label Text="Kierowca" Grid.Column="0" Grid.Row="10"/>
+            <Picker x:Name ="KierowcyPicker" Grid.Column="0" Grid.Row="11"
+                ItemsSource="{Binding KierowcyList}" ItemDisplayBinding="{Binding String}" SelectedItem="{Binding WybranyKierowca}"
+            />
+            <Label Text="Długość Trasy" Grid.Column="2" Grid.Row="10"/>
+            <Entry x:Name="DlogoscEntry" Grid.Column="2" Grid.Row="11"/>
+
+            <Label Text="Czas Jazdy" Grid.Column="0" Grid.Row="13"/>
+            <Entry x:Name="CzasEntry" Grid.Column="0" Grid.Row="14"/>
+
+            <Label Text="Czas Pracy Kierowcy" Grid.Column="2" Grid.Row="13"/>
+            <Entry x:Name="CzasPEntry" Grid.Column="2" Grid.Row="14"/>
+
+            <Button Text="Save" WidthRequest="200" Grid.Column="0" Grid.Row="16" Clicked="OnSaveClicked"/>
+            <Button Text="Cancel" WidthRequest="200" Grid.Column="2" Grid.Row="16" Clicked="OnCancelClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
